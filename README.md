@@ -16,7 +16,7 @@ Here are links to more information on Cloudera Impala:
 
  
  
-To use the Cloudera Impala JDBC driver in your own maven-based project you can copy the `<dependency>` and `<repository>` elements from this project's pom to your own.
+To use the Cloudera Impala JDBC driver in your own maven-based project you can copy the `<dependency>` and `<repository>` elements from this project's pom to your own instead of manually downloading the JDBC driver jars.
 
 
 
