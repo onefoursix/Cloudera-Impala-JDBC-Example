@@ -1,7 +1,7 @@
 Cloudera Impala JDBC Example
 ============================
 
-This example shows how to build and run a maven-based project that executes SQL queries on Cloudera Impala using JDBC.  To use the Cloudera Impala JDBC driver in your own project you can copy the `<dependency>` and `<repository>` elements from this project's pom to your own.
+This example shows how to build and run a maven-based project that executes SQL queries on Cloudera Impala using JDBC.  To use the Cloudera Impala JDBC driver in your own maven-based project you can copy the `<dependency>` and `<repository>` elements from this project's pom to your own.
 
 Cloudera Impala is a native Massive Parallel Processing (MPP) query engine which enables users to perform interactive analysis of data stored in HBase or HDFS. 
 
