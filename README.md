@@ -17,3 +17,6 @@ Here are links to more information on Cloudera Impala:
 To build the project you must have Maven 2.x or higher installed.  Maven info is [here](http://maven.apache.org) 
 
 To run the project you must have access to a Hadoop cluster running Cloudera Impala and with a populated table defined in the Hive Metastore.
+
+
+12345
