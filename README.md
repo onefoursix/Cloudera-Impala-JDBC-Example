@@ -16,7 +16,12 @@ Here are links to more information on Cloudera Impala:
 ###Dependencies
 To build the project you must have Maven 2.x or higher installed.  Maven info is [here](http://maven.apache.org) 
 
-To run the project you must have access to a Hadoop cluster running Cloudera Impala and with a populated table defined in the Hive Metastore.
+To run the project you must have access to a Hadoop cluster running Cloudera Impala with a populated table defined in the Hive Metastore.
+
+###Creating a table to run the example with
+
+
+For this example I will use the 
 
 
 ![Hue Table List](images/HueTableList.jpg)
