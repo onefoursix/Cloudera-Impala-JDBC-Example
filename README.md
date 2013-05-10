@@ -65,7 +65,11 @@ To build the project, run the command:
 from the root of the project directory.   There is a build.sh script for your convenience.
 
 ###Running the example
-To run the example, use the command `mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample` from the root of the project directory.  There is a run.sh script for your convinience.
+To run the example, use the command:
+
+`mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample` 
+
+from the root of the project directory.  There is a run.sh script for your convenience.
 
 ###Sample output
 Here is sample output from running the example:
