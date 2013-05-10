@@ -46,7 +46,7 @@ For this example I will use one of the Hue Beeswax sample tables.  I can see the
 ![Hue Table List](images/HueTableList.jpg)
 
 ###Set the query and impalad host
-Edit these two setting int the ClouderaImpalaJdbcExample source file:
+Edit these two setting in the ClouderaImpalaJdbcExample source file:
 
 - Set the SQL Statement
 
@@ -58,7 +58,10 @@ Edit these two setting int the ClouderaImpalaJdbcExample source file:
 
 
 ###Building the project
-Run the command `mvn clean compile`.   There is a build.sh script for your convenience.
+To build the project, run the command `mvn clean compile` from the root of the project directory.   There is a build.sh script for your convenience.
 
 ###Running the example
-To run the example
+To run the example, use the command `mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample' from the root of the project directory.  There is a run.sh script for your convinience.
+
+###Sample output
+Here is sample output from running the example
