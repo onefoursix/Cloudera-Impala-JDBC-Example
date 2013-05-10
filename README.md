@@ -19,4 +19,4 @@ To build the project you must have Maven 2.x or higher installed.  Maven info is
 To run the project you must have access to a Hadoop cluster running Cloudera Impala and with a populated table defined in the Hive Metastore.
 
 
-12345678910
+![HueTable View (image)](/path/to/img.jpg)
