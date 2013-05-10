@@ -26,4 +26,4 @@ For this example I will use one of the Hue Beeswax sample tables.  I can see the
 
 
 If you are using Hue you can also test your Cloudera Impala query as shown here:  
-![Hue Table List](images/HueTableList.jpg)
+![Hue Impala Query](images/HueImpalaQuery.jpg)
