@@ -14,12 +14,12 @@ Here are links to more information on Cloudera Impala:
 - [Impala-User Google Group](https://groups.google.com/a/cloudera.org/forum/?fromgroups#!forum/impala-user)
 
 ###Dependencies
-To build the project you must have Maven 2.x or higher installed.  Maven info is [here](http://maven.apache.org) 
+To build the project you must have Maven 2.x or higher installed.  Maven info is [here](http://maven.apache.org).
 
 To run the project you must have access to a Hadoop cluster running Cloudera Impala with a populated table defined in the Hive Metastore.
 
 ###Creating a table to run the example with
-For this example I will use one of the Hue Beeswax sample tables.  I can see the tables using [Hue](http://gethue.com)  
+For this example I will use one of the Hue Beeswax sample tables.  I can see the tables using [Hue](http://gethue.com) as in the screenshot below:  
 
 
 ![Hue Table List](images/HueTableList.jpg)
