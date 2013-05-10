@@ -64,4 +64,35 @@ To build the project, run the command `mvn clean compile` from the root of the p
 To run the example, use the command `mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample' from the root of the project directory.  There is a run.sh script for your convinience.
 
 ###Sample output
-Here is sample output from running the example
+Here is sample output from running the example:
+
+`mbrooks-MBP:Cloudera-Impala-JDBC-Example mbrooks$ ./run.sh
+
+Cloudera Impala JDBC Example
+Using Connection URL: jdbc:hive2://192.168.171.100:21050/;auth=noSasl
+Running Query: SELECT description FROM sample_07 limit 10
+
+== Begin Query Results ======================
+All Occupations
+Management occupations
+Chief executives
+General and operations managers
+Legislators
+Advertising and promotions managers
+Marketing managers
+Sales managers
+Public relations managers
+Administrative services managers
+== End Query Results =======================
+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.042s
+[INFO] Finished at: Fri May 10 12:07:47 PDT 2013
+[INFO] Final Memory: 7M/81M
+[INFO] ------------------------------------------------------------------------
+
+
+`
