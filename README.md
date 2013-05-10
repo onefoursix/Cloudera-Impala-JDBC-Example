@@ -46,7 +46,7 @@ For this example I will use one of the Hue Beeswax sample tables.  I can see the
 
 ![Hue Table List](images/HueTableList.jpg)
 
-###Configure the project
+###Set the query and impalad host
 Edit these two setting int the ClouderaImpalaJdbcExample source file:
 
 - Set the SQL Statement
