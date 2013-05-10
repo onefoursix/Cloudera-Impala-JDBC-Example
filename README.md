@@ -30,9 +30,9 @@ To run the project you must have access to a Hadoop cluster running Cloudera Imp
 ###Configure the example
 To configure the example you must do three things:
 
-1) Select or create the table(s) to query against.
-2) Set the query in the example source file
-3) Set the impalad host in the example source file
+- Select or create the table(s) to query against.
+- Set the query in the example source file
+- Set the impalad host in the example source file
 
 These steps are described in more detail here:
 
