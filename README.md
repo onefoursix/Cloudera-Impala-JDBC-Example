@@ -34,9 +34,13 @@ For this example I will use one of the Hue Beeswax sample tables.  I can see the
 ![Hue Table List](images/HueTableList.jpg)
 
 ###Configure the project
-Set the impalad host in the ClouderaImpalaJdbcExample source file:
+Edit these two setting int the ClouderaImpalaJdbcExample source file:
 
-
+- Set the SQL Statement 
+`private static final String SQL_STATEMENT = "SELECT description FROM sample_07 limit 10";`
+	
+- Set the host for the impalad you want to connect to:
+`private static final String IMPALAD_HOST = "MyImpaladHost";`
 
 
 ###Building the project
