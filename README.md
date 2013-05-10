@@ -22,7 +22,7 @@ To run the project you must have access to a Hadoop cluster running Cloudera Imp
 For this example I will use one of the Hue Beeswax sample tables.  I can see the tables using [Hue](http://gethue.com) as in the screenshot below:  
 
 
-![Hue Table List](images/HueTableList.jpg)
+![Hue Table List](images/HueTableList2.jpg)
 
 If you are using Hue you can also test your Cloudera Impala query as shown here:  
 ![Hue Table List](images/HueTableList.jpg)
