@@ -24,10 +24,19 @@ To use the Cloudera Impala JDBC driver in your own maven-based project you can c
 ###Dependencies
 To build the project you must have Maven 2.x or higher installed.  Maven info is [here](http://maven.apache.org).
 
-To run the project you must have access to a Hadoop cluster running Cloudera Impala with a populated table defined in the Hive Metastore.
+To run the project you must have access to a Hadoop cluster running Cloudera Impala with at least one populated table defined in the Hive Metastore.
 
 
-###Select a table to run the example with
+###Configure the example
+To configure the example you must do three things:
+
+- Select or create the table(s) to query against.
+
+
+
+
+
+Select a table to run the example with
 For this example I will use one of the Hue Beeswax sample tables.  I can see the tables using [Hue](http://gethue.com) as in the screenshot below:  
 
 
@@ -36,10 +45,12 @@ For this example I will use one of the Hue Beeswax sample tables.  I can see the
 ###Configure the project
 Edit these two setting int the ClouderaImpalaJdbcExample source file:
 
-- Set the SQL Statement 
+- Set the SQL Statement
+
 `private static final String SQL_STATEMENT = "SELECT description FROM sample_07 limit 10";`
 	
-- Set the host for the impalad you want to connect to:
+- Set the host for the impalad you want to connect to: 
+
 `private static final String IMPALAD_HOST = "MyImpaladHost";`
 
 
