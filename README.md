@@ -34,13 +34,13 @@ To configure the example you must do three things:
 - Set the query in the example source file
 - Set the impalad host in the example source file
 
-These steps are described in more detail here:
+These steps are described in more detail below.
 
 
 
 
 
-Select a table to run the example with
+###Select or create the table(s) to run the example with
 For this example I will use one of the Hue Beeswax sample tables.  I can see the tables using [Hue](http://gethue.com) as in the screenshot below:  
 
 
