@@ -61,7 +61,7 @@ Edit these two setting in the ClouderaImpalaJdbcExample source file:
 To build the project, run the command `mvn clean compile` from the root of the project directory.   There is a build.sh script for your convenience.
 
 ###Running the example
-To run the example, use the command `mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample' from the root of the project directory.  There is a run.sh script for your convinience.
+To run the example, use the command `mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample` from the root of the project directory.  There is a run.sh script for your convinience.
 
 ###Sample output
 Here is sample output from running the example:
@@ -93,6 +93,4 @@ Administrative services managers
 [INFO] Finished at: Fri May 10 12:07:47 PDT 2013
 [INFO] Final Memory: 7M/81M
 [INFO] ------------------------------------------------------------------------
-
-
 `
