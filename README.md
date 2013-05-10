@@ -103,7 +103,7 @@ Here is sample output from running the example:
     [INFO] ------------------------------------------------------------------------
     [INFO] BUILD SUCCESS
     [INFO] ------------------------------------------------------------------------
-    [INFO] Total time: 2.042s
+    [INFO] Total time: 1.705s
     [INFO] Finished at: Fri May 10 12:07:47 PDT 2013
     [INFO] Final Memory: 7M/81M
     [INFO] ------------------------------------------------------------------------
