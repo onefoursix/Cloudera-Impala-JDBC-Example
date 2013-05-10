@@ -44,7 +44,7 @@ public class ClouderaImpalaJdbcExample {
 
 			// print the results to the console
 			while (rs.next()) {
-				// the example query returns only one column of type String
+				// the example query returns one String column
 				System.out.println(rs.getString(1));
 			}
 
