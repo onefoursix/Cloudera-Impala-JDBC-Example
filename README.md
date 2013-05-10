@@ -25,5 +25,5 @@ For this example I will use one of the Hue Beeswax sample tables.  I can see the
 ![Hue Table List](images/HueTableList.jpg)
 
 
-If you are using Hue you can also test your Cloudera Impala query as shown here:  
+You can also edit and run queries against Cloudera Impala using Hue.  For this example I will use a trivial query:  "select descritption from sample_07 limit 10". Here is a screenshot of the Cloudera Impala query results in Hue:
 ![Hue Impala Query](images/HueImpalaQuery.jpg)
