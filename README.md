@@ -10,11 +10,13 @@ Here are links to more information on Cloudera Impala:
 
 - [Cloudera Impala Documentation](http://www.cloudera.com/content/support/en/documentation/cloudera-impala/cloudera-impala-documentation-v1-latest.html)
 
+- [Cloudera Impala JDBC Documentation](http://www.cloudera.com/content/cloudera-content/cloudera-docs/Impala/latest/Installing-and-Using-Impala/ciiu_impala_jdbc.html)
+
 - [Impala-User Google Group](https://groups.google.com/a/cloudera.org/forum/?fromgroups#!forum/impala-user)
 
  
  
- To use the Cloudera Impala JDBC driver in your own maven-based project you can copy the `<dependency>` and `<repository>` elements from this project's pom to your own.
+To use the Cloudera Impala JDBC driver in your own maven-based project you can copy the `<dependency>` and `<repository>` elements from this project's pom to your own.
 
 
 
