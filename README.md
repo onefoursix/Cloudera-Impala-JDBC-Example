@@ -19,9 +19,7 @@ To build the project you must have Maven 2.x or higher installed.  Maven info is
 To run the project you must have access to a Hadoop cluster running Cloudera Impala with a populated table defined in the Hive Metastore.
 
 ###Creating a table to run the example with
-
-
-For this example I will use the 
+For this example I will use one of the Hue Beeswax sample tables.  I can see the tables using [Hue](http://gethue.com)  
 
 
 ![Hue Table List](images/HueTableList.jpg)
