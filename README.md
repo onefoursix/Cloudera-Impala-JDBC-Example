@@ -74,8 +74,15 @@ from the root of the project directory.  There is a run.sh script for your conve
 ####Sample output
 Here is sample output from running the example:
 
-    mbrooks-MBP:Cloudera-Impala-JDBC-Example mbrooks$ ./run.sh
-
+    $ ./run.sh
+    [INFO] Scanning for projects...
+    [INFO]                                                                         
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Building cloudera-impala-jdbc-example 1.0
+    [INFO] ------------------------------------------------------------------------ 
+    ...
+    [INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ cloudera-impala-jdbc-example ---
+    
     Cloudera Impala JDBC Example
     Using Connection URL: jdbc:hive2://192.168.171.100:21050/;auth=noSasl
     Running Query: SELECT description FROM sample_07 limit 10
