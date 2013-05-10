@@ -1,7 +1,7 @@
 Cloudera Impala JDBC Example
 ============================
 
-This example shows how to build and run a maven-based project that executes a SQL query on Cloudera Impala using JDBC.
+This example shows how to build and run a maven-based project that executes a SQL query on Cloudera Impala using JDBC.  To use the Cloudera Impala JDBC driver in your own project, you can add the <dependency> entries from this project's pom.xml to your own project's pom.
 
 Cloudera Impala is a native Massive Parallel Processing (MPP) query engine which enables users to perform interactive analysis of data stored in HBase or HDFS. 
 
@@ -17,6 +17,7 @@ Here are links to more information on Cloudera Impala:
 To build the project you must have Maven 2.x or higher installed.  Maven info is [here](http://maven.apache.org).
 
 To run the project you must have access to a Hadoop cluster running Cloudera Impala with a populated table defined in the Hive Metastore.
+
 
 ###Select a table to run the example with
 For this example I will use one of the Hue Beeswax sample tables.  I can see the tables using [Hue](http://gethue.com) as in the screenshot below:  
