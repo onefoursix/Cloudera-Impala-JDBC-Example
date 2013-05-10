@@ -58,7 +58,9 @@ Edit these two setting in the ClouderaImpalaJdbcExample source file:
 
 
 ###Building the project
-To build the project, run the command `mvn clean compile` from the root of the project directory.   There is a build.sh script for your convenience.
+To build the project, run the command:
+`mvn clean compile`
+from the root of the project directory.   There is a build.sh script for your convenience.
 
 ###Running the example
 To run the example, use the command `mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample` from the root of the project directory.  There is a run.sh script for your convinience.
