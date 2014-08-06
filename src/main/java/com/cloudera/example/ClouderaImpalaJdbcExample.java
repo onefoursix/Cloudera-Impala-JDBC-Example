@@ -12,7 +12,7 @@ public class ClouderaImpalaJdbcExample {
 	private static final String SQL_STATEMENT = "SELECT description FROM sample_07 limit 10";
 	
 	// set the impalad host
-	private static final String IMPALAD_HOST = "MyImpaladHost";
+	private static final String IMPALAD_HOST = "IMPALAD_HOST";
 	
 	// port 21050 is the default impalad JDBC port 
 	private static final String IMPALAD_JDBC_PORT = "21050";
