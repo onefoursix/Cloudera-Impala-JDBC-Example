@@ -1,5 +1,6 @@
 ###Cloudera Impala JDBC Example
 
+
 This branch is for Cloudera Impala 1.4.0 used with CDH 4.7.0
 
 This example shows how to build and run a maven-based project that executes SQL queries on Cloudera Impala using JDBC. 
