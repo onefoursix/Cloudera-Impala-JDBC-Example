@@ -62,7 +62,7 @@ To build the project, run the command:
 
 	mvn clean compile
 
-from the root of the project directory.   There is a build.sh script included in this project.
+from the root of the project directory.   There is a `build.sh` script included in this project.
 
 
 ####Running the example using maven
@@ -70,7 +70,7 @@ To run the example using maven, use the command:
 
 	mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample
 
-from the root of the project directory.  There is a run-with-maven.sh script included in this project.
+from the root of the project directory.  There is a `run-with-maven.sh` script included in this project.
 
 ####Sample output
 Here is sample output from running the example:
@@ -119,7 +119,7 @@ Here is sample output from running the example:
 	
 
 ####Running the example outside of maven
-To run this example outside of maven, add all of the jars that correspond to the dependencies referenced in this project's pom to the classpath.  There is an example run.sh script included in this project.  Edit the script so that the paths are correct on your system.  By default the script is configured for CDH 4.7 and Impala 1.4 installed via parcels.
+To run this example outside of maven, add all of the jars that correspond to the dependencies referenced in this project's pom to the classpath.  There is an example `run.sh` script included in this project.  Edit the script so that the paths are correct on your system.  By default the script is configured for CDH 4.7 and Impala 1.4 installed via parcels.
 
 Here are the relevant paths for jars to add to the classpath:
 
@@ -144,7 +144,6 @@ Here are the relevant paths for jars to add to the classpath:
 And here is the output from running the example outside of maven:
 
 	./run.sh
-	CLASSPATH = 	/opt/cloudera/parcels/CDH/lib/hive/lib/hive-jdbc-0.10.0-cdh4.7.0.jar:/opt/cloudera/parcels/CDH/lib/hive/lib/hive-metastore-0.10.0-cdh4.7.0.jar:/opt/cloudera/parcels/CDH/lib/hive/lib/hive-common-0.10.0-cdh4.7.0.jar:/opt/cloudera/parcels/CDH/lib/hive/lib/hive-service-0.10.0-cdh4.7.0.jar:/opt/cloudera/parcels/CDH/lib/hive/lib/libfb303-0.9.0.jar:/opt/cloudera/parcels/CDH/lib/hive/lib/libthrift-0.9.0-cdh4-1.jar:/opt/cloudera/parcels/CDH/lib/hive/lib/commons-logging-1.0.4.jar:/opt/cloudera/parcels/CDH/lib/hive/lib/log4j-1.2.16.jar:/opt/cloudera/parcels/CDH/lib/hive/lib/slf4j-api-1.6.4.jar:/opt/cloudera/parcels/IMPALA/lib/impala/lib/slf4j-log4j12-1.6.1.jar:/opt/cloudera/parcels/CDH/lib/hadoop/client//hadoop-common.jar:./cloudera-impala-jdbc-example-1.0.jar
 
 	=============================================
 	Cloudera Impala JDBC Example
