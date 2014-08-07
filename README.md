@@ -62,50 +62,107 @@ To build the project, run the command:
 
 `mvn clean compile`
 
-from the root of the project directory.   There is a build.sh script for your convenience.
+from the root of the project directory.   There is a build.sh script included in this project.
 
-####Running the example
-To run the example, use the command:
+
+####Running the example using maven
+To run the example using maven, use the command:
 
 `mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample` 
 
-from the root of the project directory.  There is a run.sh script for your convenience.
+from the root of the project directory.  There is a run-with-maven.sh script included in this project.
 
 ####Sample output
 Here is sample output from running the example:
 
-    $ ./run.sh
-    [INFO] Scanning for projects...
-    [INFO]                                                                         
-    [INFO] ------------------------------------------------------------------------
-    [INFO] Building cloudera-impala-jdbc-example 1.0
-    [INFO] ------------------------------------------------------------------------ 
-    ...
-    [INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ cloudera-impala-jdbc-example ---
-    
-    Cloudera Impala JDBC Example
-    Using Connection URL: jdbc:hive2://192.168.171.100:21050/;auth=noSasl
-    Running Query: SELECT description FROM sample_07 limit 10
-    
-    == Begin Query Results ======================
-    All Occupations
-    Management occupations
-    Chief executives
-    General and operations managers
-    Legislators
-    Advertising and promotions managers
-    Marketing managers
-    Sales managers
-    Public relations managers
-    Administrative services managers
-    == End Query Results =======================
+$ ./run-with-maven.sh 
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building cloudera-impala-jdbc-example 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.2.1:java (default-cli) > validate @ cloudera-impala-jdbc-example >>>
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.2.1:java (default-cli) < validate @ cloudera-impala-jdbc-example <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ cloudera-impala-jdbc-example ---
+
+=============================================
+Cloudera Impala JDBC Example
+Using Connection URL: jdbc:hive2://mbrooks0:21050/;auth=noSasl
+Running Query: SELECT description FROM sample_07 limit 10
+
+== Begin Query Results ======================
+All Occupations
+Management occupations
+Chief executives
+General and operations managers
+Legislators
+Advertising and promotions managers
+Marketing managers
+Sales managers
+Public relations managers
+Administrative services managers
+== End Query Results =======================
 
 
-    [INFO] ------------------------------------------------------------------------
-    [INFO] BUILD SUCCESS
-    [INFO] ------------------------------------------------------------------------
-    [INFO] Total time: 1.705s
-    [INFO] Finished at: Fri May 10 12:07:47 PDT 2013
-    [INFO] Final Memory: 7M/81M
-    [INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.044 s
+[INFO] Finished at: 2014-08-06T16:45:21-07:00
+[INFO] Final Memory: 12M/225M
+[INFO] ------------------------------------------------------------------------
+
+
+
+
+####Running the example outside of maven
+To run this example outside of maven, add all of the jars that correspond to the dependencies referenced in this project's pom to the classpath.  There is a run.sh script included in this project.  Edit the script so that the paths are correct on your system.  By default the script is configured for CDH 4.7 and Impala 1.4 installed via parcels.
+
+Here is the relevant paths for jars to add to the classpath:
+
+HADOOP_CLIENT_DIR=/opt/cloudera/parcels/CDH/lib/hadoop/client/
+HIVE_LIB_DIR=/opt/cloudera/parcels/CDH/lib/hive/lib
+IMPALA_LIB_DIR=/opt/cloudera/parcels/IMPALA/lib/impala/lib
+
+CLASSPATH=$HIVE_LIB_DIR/hive-jdbc-0.10.0-cdh4.7.0.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-metastore-0.10.0-cdh4.7.0.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-common-0.10.0-cdh4.7.0.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-service-0.10.0-cdh4.7.0.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/libfb303-0.9.0.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/libthrift-0.9.0-cdh4-1.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/commons-logging-1.0.4.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/log4j-1.2.16.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/slf4j-api-1.6.4.jar
+
+CLASSPATH=$CLASSPATH:$IMPALA_LIB_DIR/slf4j-log4j12-1.6.1.jar
+
+CLASSPATH=$CLASSPATH:$HADOOP_CLIENT_DIR/hadoop-common.jar
+
+
+
+And here is the output from running the example outside of maven:
+
+$ ./run.sh 
+
+=============================================
+Cloudera Impala JDBC Example
+Using Connection URL: jdbc:hive2://mbrooks0:21050/;auth=noSasl
+Running Query: SELECT description FROM sample_07 limit 10
+
+== Begin Query Results ======================
+All Occupations
+Management occupations
+Chief executives
+General and operations managers
+Legislators
+Advertising and promotions managers
+Marketing managers
+Sales managers
+Public relations managers
+Administrative services managers
+== End Query Results =======================
+
 
