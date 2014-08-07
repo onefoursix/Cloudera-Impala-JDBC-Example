@@ -64,17 +64,27 @@ To build the project, run the command:
 
 from the root of the project directory.   There is a build.sh script included in this project.
 
+<<<<<<< HEAD
+=======
+
+####Running the example using maven
+To run the example using maven, use the command:
+>>>>>>> FETCH_HEAD
 
 ####Running the example using maven
 To run the example using maven, use the command:
 
+<<<<<<< HEAD
 	mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample
 
+=======
+>>>>>>> FETCH_HEAD
 from the root of the project directory.  There is a run-with-maven.sh script included in this project.
 
 ####Sample output
 Here is sample output from running the example:
 
+<<<<<<< HEAD
 	$ ./run-with-maven.sh 
 	[INFO] Scanning for projects...
 	[INFO]                                               
@@ -115,6 +125,48 @@ Here is sample output from running the example:
 	[INFO] Final Memory: 12M/225M
 	[INFO] ------------------------------------------------------------------------
 
+=======
+`$ ./run-with-maven.sh 
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building cloudera-impala-jdbc-example 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.2.1:java (default-cli) > validate @ cloudera-impala-jdbc-example >>>
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.2.1:java (default-cli) < validate @ cloudera-impala-jdbc-example <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ cloudera-impala-jdbc-example ---
+
+=============================================
+Cloudera Impala JDBC Example
+Using Connection URL: jdbc:hive2://mbrooks0:21050/;auth=noSasl
+Running Query: SELECT description FROM sample_07 limit 10
+
+== Begin Query Results ======================
+All Occupations
+Management occupations
+Chief executives
+General and operations managers
+Legislators
+Advertising and promotions managers
+Marketing managers
+Sales managers
+Public relations managers
+Administrative services managers
+== End Query Results =======================
+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.044 s
+[INFO] Finished at: 2014-08-06T16:45:21-07:00
+[INFO] Final Memory: 12M/225M
+[INFO] ------------------------------------------------------------------------
+`
+>>>>>>> FETCH_HEAD
 
 
 
@@ -123,6 +175,7 @@ To run this example outside of maven, add all of the jars that correspond to the
 
 Here is the relevant paths for jars to add to the classpath:
 
+<<<<<<< HEAD
 	HADOOP_CLIENT_DIR=/opt/cloudera/parcels/CDH/lib/hadoop/client/
 	HIVE_LIB_DIR=/opt/cloudera/parcels/CDH/lib/hive/lib
 	IMPALA_LIB_DIR=/opt/cloudera/parcels/IMPALA/lib/impala/lib
@@ -141,10 +194,31 @@ Here is the relevant paths for jars to add to the classpath:
 
 	CLASSPATH=$CLASSPATH:$HADOOP_CLIENT_DIR/hadoop-common.jar
 
+=======
+`HADOOP_CLIENT_DIR=/opt/cloudera/parcels/CDH/lib/hadoop/client/
+HIVE_LIB_DIR=/opt/cloudera/parcels/CDH/lib/hive/lib
+IMPALA_LIB_DIR=/opt/cloudera/parcels/IMPALA/lib/impala/lib
+
+CLASSPATH=$HIVE_LIB_DIR/hive-jdbc-0.10.0-cdh4.7.0.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-metastore-0.10.0-cdh4.7.0.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-common-0.10.0-cdh4.7.0.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-service-0.10.0-cdh4.7.0.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/libfb303-0.9.0.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/libthrift-0.9.0-cdh4-1.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/commons-logging-1.0.4.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/log4j-1.2.16.jar
+CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/slf4j-api-1.6.4.jar
+
+CLASSPATH=$CLASSPATH:$IMPALA_LIB_DIR/slf4j-log4j12-1.6.1.jar
+
+CLASSPATH=$CLASSPATH:$HADOOP_CLIENT_DIR/hadoop-common.jar
+`
+>>>>>>> FETCH_HEAD
 
 
 And here is the output from running the example outside of maven:
 
+<<<<<<< HEAD
 	$ ./run.sh 
 
 	=============================================
@@ -165,4 +239,26 @@ And here is the output from running the example outside of maven:
 	Administrative services managers
 	== End Query Results =======================
 
+=======
+`$ ./run.sh 
+
+=============================================
+Cloudera Impala JDBC Example
+Using Connection URL: jdbc:hive2://mbrooks0:21050/;auth=noSasl
+Running Query: SELECT description FROM sample_07 limit 10
+
+== Begin Query Results ======================
+All Occupations
+Management occupations
+Chief executives
+General and operations managers
+Legislators
+Advertising and promotions managers
+Marketing managers
+Sales managers
+Public relations managers
+Administrative services managers
+== End Query Results =======================
+`
+>>>>>>> FETCH_HEAD
 
