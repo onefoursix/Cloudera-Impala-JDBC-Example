@@ -75,7 +75,7 @@ from the root of the project directory.  There is a run-with-maven.sh script inc
 ####Sample output
 Here is sample output from running the example:
 
-$ ./run-with-maven.sh 
+`$ ./run-with-maven.sh 
 [INFO] Scanning for projects...
 [INFO]                                                                         
 [INFO] ------------------------------------------------------------------------
@@ -114,7 +114,7 @@ Administrative services managers
 [INFO] Finished at: 2014-08-06T16:45:21-07:00
 [INFO] Final Memory: 12M/225M
 [INFO] ------------------------------------------------------------------------
-
+`
 
 
 
@@ -123,7 +123,7 @@ To run this example outside of maven, add all of the jars that correspond to the
 
 Here is the relevant paths for jars to add to the classpath:
 
-HADOOP_CLIENT_DIR=/opt/cloudera/parcels/CDH/lib/hadoop/client/
+`HADOOP_CLIENT_DIR=/opt/cloudera/parcels/CDH/lib/hadoop/client/
 HIVE_LIB_DIR=/opt/cloudera/parcels/CDH/lib/hive/lib
 IMPALA_LIB_DIR=/opt/cloudera/parcels/IMPALA/lib/impala/lib
 
@@ -140,12 +140,12 @@ CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/slf4j-api-1.6.4.jar
 CLASSPATH=$CLASSPATH:$IMPALA_LIB_DIR/slf4j-log4j12-1.6.1.jar
 
 CLASSPATH=$CLASSPATH:$HADOOP_CLIENT_DIR/hadoop-common.jar
-
+`
 
 
 And here is the output from running the example outside of maven:
 
-$ ./run.sh 
+`$ ./run.sh 
 
 =============================================
 Cloudera Impala JDBC Example
@@ -164,5 +164,5 @@ Sales managers
 Public relations managers
 Administrative services managers
 == End Query Results =======================
-
+`
 
