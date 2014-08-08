@@ -8,11 +8,11 @@ import java.sql.Statement;
 
 public class ClouderaImpalaJdbcExample {
 	
-	// here is an example query based on one of the Hue Beeswax sample tables 
+	// here is an example query based on one of the Hue sample tables 
 	private static final String SQL_STATEMENT = "SELECT description FROM sample_07 limit 10";
 	
 	// set the impalad host
-	private static final String IMPALAD_HOST = "IMPALAD_HOST";
+	private static final String IMPALAD_HOST = "IMPALAD_HOST"; 
 	
 	// port 21050 is the default impalad JDBC port 
 	private static final String IMPALAD_JDBC_PORT = "21050";
