@@ -7,7 +7,7 @@
 	<artifactId>cloudera-impala-jdbc-example</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
-	<description>Cloudera Impala JDBC Example app for CDH 5.1.0</description>
+	<description>Cloudera Impala JDBC Example for CDH 5.1.0</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
