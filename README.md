@@ -43,7 +43,7 @@ These steps are described in more detail below.
 For this example I will use one of the Hive sample tables installed using [Hue](http://gethue.com) as shown in the screenshot below:  
 
 
-![Hue Table List](images/HueTableList.jpg)
+![Hue Table List](images/hue.png)
 
 #####Set the query and impalad host
 Edit these two setting in the `ClouderaImpalaJdbcExample.java` source file:
