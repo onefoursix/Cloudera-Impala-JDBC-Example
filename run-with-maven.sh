@@ -1,1 +1,1 @@
-mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample
+mvn -X exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample
