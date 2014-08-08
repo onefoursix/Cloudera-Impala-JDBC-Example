@@ -40,7 +40,7 @@ These steps are described in more detail below.
 
 
 #####Select or create the table(s) to run the example with
-For this example I will use one of the Hive sample tables.  I can see the tables using [Hue](http://gethue.com) as in the screenshot below:  
+For this example I will use one of the Hive sample tables installed using [Hue](http://gethue.com) as in the screenshot below:  
 
 
 ![Hue Table List](images/HueTableList.jpg)
