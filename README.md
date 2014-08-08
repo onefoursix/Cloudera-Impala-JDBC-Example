@@ -119,7 +119,7 @@ Here is sample output from running the example:
 	
 
 ####Running the example outside of maven
-To run this example outside of maven, add all of the jars that correspond to the dependencies referenced in this project's pom to the classpath.  There is an example `run.sh` script included in this project.  Edit the script so that the paths are correct on your system.
+To run this example outside of maven, add all of the jars that correspond to the dependencies referenced in this project's pom to the classpath.  There is an example `run.sh` script included in this project that provides an example of how to set the classpath.  Edit the script so the paths are correct on your system.
 
 Here are the relevant paths for jars to add to the classpath, using the default locations for CDH 4.7 and Impala 1.4 installed via [parcels](http://blog.cloudera.com/blog/2013/05/faq-understanding-the-parcel-binary-distribution-format/):
 
