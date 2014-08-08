@@ -40,13 +40,13 @@ These steps are described in more detail below.
 
 
 #####Select or create the table(s) to run the example with
-For this example I will use one of the Hive sample tables installed using [Hue](http://gethue.com) as in the screenshot below:  
+For this example I will use one of the Hive sample tables installed using [Hue](http://gethue.com) as shown in the screenshot below:  
 
 
 ![Hue Table List](images/HueTableList.jpg)
 
 #####Set the query and impalad host
-Edit these two setting in the ClouderaImpalaJdbcExample source file:
+Edit these two setting in the `ClouderaImpalaJdbcExample.java` source file:
 
 - Set the SQL Statement:
 
