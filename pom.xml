@@ -91,7 +91,7 @@
 		
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient/<artifactId>
+			<artifactId>httpclient</artifactId>
 			<version>4.2.5</version>
 		</dependency>
 		
