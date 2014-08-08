@@ -48,6 +48,9 @@ For this example I will use the table `sample_07` installed with the [Hue](http:
 #####Set the query and impalad host
 Edit these two setting in the `ClouderaImpalaJdbcExample.java` source file:
 
+#####Set the query and impalad host
+Edit these two setting in the `ClouderaImpalaJdbcExample.java` source file:
+
 - Set the SQL Statement:
 
 	`private static final String SQL_STATEMENT = "SELECT description FROM sample_07 limit 10";`
