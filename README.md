@@ -50,11 +50,11 @@ Edit these two setting in the ClouderaImpalaJdbcExample source file:
 
 - Set the SQL Statement
 
-`private static final String SQL_STATEMENT = "SELECT description FROM sample_07 limit 10";`
+	`private static final String SQL_STATEMENT = "SELECT description FROM sample_07 limit 10";`
 	
 - Set the host for the impalad you want to connect to: 
 
-`private static final String IMPALAD_HOST = "MyImpaladHost";`
+	`private static final String IMPALAD_HOST = "MyImpaladHost";`
 
 
 ####Building the project
