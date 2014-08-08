@@ -40,7 +40,7 @@ These steps are described in more detail below.
 
 
 #####Select or create the table(s) to run the example with
-For this example I will use one of the Hive sample tables installed using [Hue](http://gethue.com) as shown in the screenshot below:  
+For this example I will use the table `sample_07` installed with the [Hue](http://gethue.com) examples as shown in the screenshot below:  
 
 
 ![Hue Table List](images/hue.png)
@@ -76,46 +76,7 @@ from the root of the project directory.  There is a `run-with-maven.sh` script i
 Here is sample output from running the example:
 
 
-	$ ./run-with-maven.sh 
-	[INFO] Scanning for projects...
-	[INFO]                                               
-	[INFO] ------------------------------------------------------------------------
-	[INFO] Building cloudera-impala-jdbc-example 1.0
-	[INFO] ------------------------------------------------------------------------
-	[INFO] 
-	[INFO] >>> exec-maven-plugin:1.2.1:java (default-cli) > validate @ cloudera-impala-jdbc-example >>>
-	[INFO] 
-	[INFO] <<< exec-maven-plugin:1.2.1:java (default-cli) < validate @ cloudera-impala-jdbc-example <<<
-	[INFO] 
-	[INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ cloudera-impala-jdbc-example ---
-
-	=============================================
-	Cloudera Impala JDBC Example
-	Using Connection URL: jdbc:hive2://mbrooks0:21050/;auth=noSasl
-	Running Query: SELECT description FROM sample_07 limit 10
-
-	== Begin Query Results ======================
-	All Occupations
-	Management occupations
-	Chief executives
-	General and operations managers
-	Legislators
-	Advertising and promotions managers
-	Marketing managers
-	Sales managers
-	Public relations managers
-	Administrative services managers
-	== End Query Results =======================
-
-
-	[INFO] ------------------------------------------------------------------------
-	[INFO] BUILD SUCCESS
-	[INFO] ------------------------------------------------------------------------
-	[INFO] Total time: 2.044 s
-	[INFO] Finished at: 2014-08-06T16:45:21-07:00
-	[INFO] Final Memory: 12M/225M
-	[INFO] ------------------------------------------------------------------------
-
+	
 	
 
 ####Running the example outside of maven
