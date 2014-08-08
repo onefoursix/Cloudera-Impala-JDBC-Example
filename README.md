@@ -62,7 +62,7 @@ To build the project, run the command:
 
 	mvn clean package
 
-from the root of the project directory.   There is a `build.sh` script included in this project.
+from the root of the project directory. 
 
 
 ####Running the example using maven
