@@ -75,6 +75,45 @@ from the root of the project directory.  There is a `run-with-maven.sh` script i
 ####Sample output
 Here is sample output from running the example:
 
+	$ ./run-with-maven.sh 
+	[INFO] Scanning for projects...
+	[INFO]                                                                         
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Building cloudera-impala-jdbc-example 1.0
+	[INFO] ------------------------------------------------------------------------
+	[INFO] 
+	[INFO] >>> exec-maven-plugin:1.2.1:java (default-cli) > validate @ cloudera-impala-jdbc-example >>>
+	[INFO] 
+	[INFO] <<< exec-maven-plugin:1.2.1:java (default-cli) < validate @ cloudera-impala-jdbc-example <<<
+	[INFO] 
+	[INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ cloudera-impala-jdbc-example ---
+
+	=============================================
+	Cloudera Impala JDBC Example
+	Using Connection URL: jdbc:hive2://mbrooks0:21050/;auth=noSasl
+	Running Query: SELECT description FROM sample_07 limit 10
+	
+	== Begin Query Results ======================
+	All Occupations
+	Management occupations
+	Chief executives
+	General and operations managers
+	Legislators
+	Advertising and promotions managers
+	Marketing managers
+	Sales managers
+	Public relations managers
+	Administrative services managers
+	== End Query Results =======================
+	
+	
+	[INFO] ------------------------------------------------------------------------
+	[INFO] BUILD SUCCESS
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Total time: 3.716 s
+	[INFO] Finished at: 2014-08-07T23:23:43-07:00
+	[INFO] Final Memory: 16M/225M
+	[INFO] ------------------------------------------------------------------------
 
 	
 	
@@ -82,30 +121,36 @@ Here is sample output from running the example:
 ####Running the example outside of maven
 To run this example outside of maven, add all of the jars that correspond to the dependencies referenced in this project's pom to the classpath.  There is an example `run.sh` script included in this project that provides an example of how to set the classpath.  Edit the script so the paths are correct on your system.
 
-Here are the relevant paths for jars to add to the classpath, using the default locations for CDH 4.7 and Impala 1.4 installed via [parcels](http://blog.cloudera.com/blog/2013/05/faq-understanding-the-parcel-binary-distribution-format/):
+Here are the relevant paths for jars to add to the classpath, using the default locations for Cloudera Impala included in CDH 5.1.0 installed via [parcels](http://blog.cloudera.com/blog/2013/05/faq-understanding-the-parcel-binary-distribution-format/):
 
 	HADOOP_CLIENT_DIR=/opt/cloudera/parcels/CDH/lib/hadoop/client/
 	HIVE_LIB_DIR=/opt/cloudera/parcels/CDH/lib/hive/lib
-	IMPALA_LIB_DIR=/opt/cloudera/parcels/IMPALA/lib/impala/lib
-
-	CLASSPATH=$HIVE_LIB_DIR/hive-jdbc-0.10.0-cdh4.7.0.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-metastore-0.10.0-cdh4.7.0.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-common-0.10.0-cdh4.7.0.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-service-0.10.0-cdh4.7.0.jar
+	IMPALA_LIB_DIR=/opt/cloudera/parcels/CDH/lib/impala/lib
+	
+	CLASSPATH=$HIVE_LIB_DIR/hive-jdbc.jar
+	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-metastore.jar
+	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-common.jar
+	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-service.jar
 	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/libfb303-0.9.0.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/libthrift-0.9.0-cdh4-1.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/commons-logging-1.0.4.jar
+	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/libthrift-0.9.0.cloudera.2.jar
+	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/commons-logging-1.1.3.jar
 	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/log4j-1.2.16.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/slf4j-api-1.6.4.jar
-
-	CLASSPATH=$CLASSPATH:$IMPALA_LIB_DIR/slf4j-log4j12-1.6.1.jar
-
+	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/slf4j-api-1.7.5.jar
+	
+	CLASSPATH=$CLASSPATH:$IMPALA_LIB_DIR/slf4j-log4j12-1.7.5.jar
+	
 	CLASSPATH=$CLASSPATH:$HADOOP_CLIENT_DIR/hadoop-common.jar
+	CLASSPATH=$CLASSPATH:$HADOOP_CLIENT_DIR/httpcore.jar
+	CLASSPATH=$CLASSPATH:$HADOOP_CLIENT_DIR/httpclient.jar
+	
+	CLASSPATH=$CLASSPATH:./cloudera-impala-jdbc-example-1.0.jar
+	
+	java -cp $CLASSPATH com.cloudera.example.ClouderaImpalaJdbcExample
 
 And here is the output from running the example outside of maven:
 
-	./run.sh
-
+	$ ./run.sh 
+	
 	=============================================
 	Cloudera Impala JDBC Example
 	Using Connection URL: jdbc:hive2://mbrooks0:21050/;auth=noSasl
