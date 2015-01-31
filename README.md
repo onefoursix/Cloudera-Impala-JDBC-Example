@@ -1,6 +1,6 @@
 ###Cloudera Impala JDBC Example
 
-This branch is for Cloudera Impala included with CDH 5.1.0
+This branch is for Cloudera Impala included with CDH 5.2.1
 
 This example shows how to build and run a maven-based project that executes SQL queries on Cloudera Impala using JDBC. 
 Cloudera Impala is a native Massive Parallel Processing (MPP) query engine which enables users to perform interactive analysis of data stored in HBase or HDFS. 
@@ -67,11 +67,14 @@ To build the project, run the command:
 
 from the root of the project directory. 
 
+Note that this will build the project for the version of CDH (Hive andd Hadoop) specified in the POM file. If the version of your CDH differs from the one in that file, run the following script to build the project for your current CDH version:
+
+	./build-for-current-cdh.sh
 
 ####Running the example using maven
 To run the example using maven, use the command:
 
-	mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample
+	mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample -Dexec.arguments="SELECT description FROM sample_07 limit 10"
 
 from the root of the project directory.  There is a `run-with-maven.sh` script included in this project.
 
@@ -122,33 +125,25 @@ Here is sample output from running the example:
 	
 
 ####Running the example outside of maven
-To run this example outside of maven, add all of the jars that correspond to the dependencies referenced in this project's pom to the classpath.  There is an example `run.sh` script included in this project that provides an example of how to set the classpath.  Edit the script so the paths are correct on your system.
+To run this example outside of maven, add all of the jars that correspond to the dependencies referenced in this project's pom to the classpath.  There is an example `run.sh` script included in this project that provides an example of how to set the classpath.  The script uses "hadoop classpath" to configure the classpath correctly. If the "hadoop" command line utility is not available you may have to edit the script so the paths are correct on your system.
 
-Here are the relevant paths for jars to add to the classpath, using the default locations for Cloudera Impala included in CDH 5.1.0 installed via [parcels](http://blog.cloudera.com/blog/2013/05/faq-understanding-the-parcel-binary-distribution-format/):
+Here are the relevant paths for jars to add to the classpath, using the default locations for Cloudera Impala included in CDH 5.2.1 installed via [parcels](http://blog.cloudera.com/blog/2013/05/faq-understanding-the-parcel-binary-distribution-format/):
 
-	HADOOP_CLIENT_DIR=/opt/cloudera/parcels/CDH/lib/hadoop/client/
-	HIVE_LIB_DIR=/opt/cloudera/parcels/CDH/lib/hive/lib
-	IMPALA_LIB_DIR=/opt/cloudera/parcels/CDH/lib/impala/lib
-	
-	CLASSPATH=$HIVE_LIB_DIR/hive-jdbc.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-metastore.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-common.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-service.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/libfb303-0.9.0.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/libthrift-0.9.0.cloudera.2.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/commons-logging-1.1.3.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/log4j-1.2.16.jar
-	CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/slf4j-api-1.7.5.jar
-	
-	CLASSPATH=$CLASSPATH:$IMPALA_LIB_DIR/slf4j-log4j12-1.7.5.jar
-	
-	CLASSPATH=$CLASSPATH:$HADOOP_CLIENT_DIR/hadoop-common.jar
-	CLASSPATH=$CLASSPATH:$HADOOP_CLIENT_DIR/httpcore.jar
-	CLASSPATH=$CLASSPATH:$HADOOP_CLIENT_DIR/httpclient.jar
-	
-	CLASSPATH=$CLASSPATH:./cloudera-impala-jdbc-example-1.0.jar
-	
-	java -cp $CLASSPATH com.cloudera.example.ClouderaImpalaJdbcExample
+        CDH_HOME=/opt/cloudera/parcels/CDH
+        HIVE_LIB_DIR=$CDH_HOME/lib/hive/lib
+        IMPALA_LIB_DIR=$CDH_HOME/lib/impala/lib
+        HADOOP_CLIENT_DIR=$CDH_HOME/lib/hadoop/client
+
+        CLASSPATH=$HADOOP_CLIENT_DIR/hadoop-common.jar
+        CLASSPATH=$CLASSPATH:$HADOOP_CLIENT_DIR/httpclient.jar
+        CLASSPATH=$CLASSPATH:$HADOOP_CLIENT_DIR/httpcore.jar
+        CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/commons-logging-1.1.3.jar
+        CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-exec.jar
+        CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-jdbc.jar
+        CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/hive-service.jar
+        CLASSPATH=$CLASSPATH:$HIVE_LIB_DIR/log4j-1.2.16.jar
+        CLASSPATH=$CLASSPATH:$IMPALA_LIB_DIR/slf4j-api-1.7.5.jar
+        CLASSPATH=$CLASSPATH:$IMPALA_LIB_DIR/slf4j-log4j12-1.7.5.jar
 
 And here is the output from running the example outside of maven:
 
