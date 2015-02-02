@@ -1,44 +1,68 @@
 package com.cloudera.example;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 public class ClouderaImpalaJdbcExample {
 	
-	// here is an example query based on one of the Hue sample tables 
-	private static final String SQL_STATEMENT = "SELECT description FROM sample_07 limit 10";
-	
-	// set the impalad host
-	private static final String IMPALAD_HOST = "IMPALAD_HOST"; 
-	
-	// port 21050 is the default impalad JDBC port 
-	private static final String IMPALAD_JDBC_PORT = "21050";
+	private static final String CONNECTION_URL_PROPERTY = "connection.url";
+	private static final String JDBC_DRIVER_NAME_PROPERTY = "jdbc.driver.class.name";
 
-	private static final String CONNECTION_URL = "jdbc:hive2://" + IMPALAD_HOST + ':' + IMPALAD_JDBC_PORT + "/;auth=noSasl";
+	private static String connectionUrl;
+	private static String jdbcDriverName;
 
-	private static final String JDBC_DRIVER_NAME = "org.apache.hive.jdbc.HiveDriver";
+        private static void loadConfiguration() throws IOException {
+                InputStream input = null;
+                try {
+                        String filename = ClouderaImpalaJdbcExample.class.getSimpleName() + ".conf";
+                        input = ClouderaImpalaJdbcExample.class.getClassLoader().getResourceAsStream(filename);
+                        Properties prop = new Properties();
+                        prop.load(input);
+        
+                        connectionUrl = prop.getProperty(CONNECTION_URL_PROPERTY);
+                        jdbcDriverName = prop.getProperty(JDBC_DRIVER_NAME_PROPERTY);
+                } finally {
+                        try {
+                                if (input != null)
+                                        input.close();
+                        } catch (IOException e) {
+                                // nothing to do
+                        }
+                }
+        }
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+
+                if (args.length != 1) {
+                        System.out.println("Syntax: ClouderaImpalaJdbcExample \"<SQL_query>\"");
+                        System.exit(1);
+                }
+                String sqlStatement = args[0];
 
 		System.out.println("\n=============================================");
 		System.out.println("Cloudera Impala JDBC Example");
-		System.out.println("Using Connection URL: " + CONNECTION_URL);
-		System.out.println("Running Query: " + SQL_STATEMENT);
+		System.out.println("Using Connection URL: " + connectionUrl);
+		System.out.println("Running Query: " + sqlStatement);
+
+                loadConfiguration();
 
 		Connection con = null;
 
 		try {
 
-			Class.forName(JDBC_DRIVER_NAME);
+			Class.forName(jdbcDriverName);
 
-			con = DriverManager.getConnection(CONNECTION_URL);
+			con = DriverManager.getConnection(connectionUrl);
 
 			Statement stmt = con.createStatement();
 
-			ResultSet rs = stmt.executeQuery(SQL_STATEMENT);
+			ResultSet rs = stmt.executeQuery(sqlStatement);
 
 			System.out.println("\n== Begin Query Results ======================");
 
