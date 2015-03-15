@@ -14,7 +14,10 @@ Icon
 # Eclipse stuff
 .classpath
 .project
-.settings/
+.settings
+
+# IntelliJ
+.idea
 
 # Vim
 *.swp
