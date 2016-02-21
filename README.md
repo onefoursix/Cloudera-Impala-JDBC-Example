@@ -33,15 +33,15 @@ Here is the view of my local Nexus repo available after launching it for the fir
 
 ![nexus2](images/nexus2.png)
 
-To add jars to the repo, login to Nexus, go to the 3rd party repo's "upload artifacts" tab and select the desired jar to upload.  I specified a group of "com.cloudera.impala.jdbc" and a version number of "2.5.30" for each of the five jars I uploaded, like this:
+To add jars to the repo, login to the local Nexus repo, go to the 3rd party repo's "upload artifacts" tab and select the desired jar to upload.  I specified a group of "com.cloudera.impala.jdbc" and a version number of "2.5.30" for each of the five jars I uploaded, like this:
 
 ![nexus3](images/nexus3.png)
 
-Click on the 3rd party repo's URL link and you can browse the uploaded jars:
+Click on the 3rd party repo's URL link and you can browse the uploaded artifacts:
 
 ![nexus4](images/nexus4.png)
 
-Drill into any of the managed artifacts and you can see the version number has been appended to each jar:
+Drill into any of the links and you can see the version number has been appended to each jar:
 
 ![nexus5](images/nexus5.png)
  
