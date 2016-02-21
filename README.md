@@ -160,7 +160,7 @@ Your output should look something like this:
     [INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ cloudera-impala-jdbc-example ---
     
     Cloudera Impala JDBC Example
-    Using Connection URL: null
+    Using Connection URL: jdbc:impala://chicago.onefoursix.com:21050
     Running Query: SELECT description FROM sample_07 limit 10
 
     == Begin Query Results ======================
