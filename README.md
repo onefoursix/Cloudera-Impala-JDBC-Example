@@ -195,7 +195,9 @@ Note that this will build the project for the version of CDH (Hive andd Hadoop) 
 	./build-for-current-cdh.sh
 
 ####Running the example using maven
-To run the example using maven, use the command:
+To run the example using maven, use the run.sh script which looks like this:
+
+
 
 	mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample -Dexec.arguments="SELECT description FROM sample_07 limit 10"
 
