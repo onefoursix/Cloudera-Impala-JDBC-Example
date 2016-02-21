@@ -32,7 +32,7 @@ I will use the community version of the [Nexus Repository Manager OSS](http://ww
 
 I downloaded Nexus Repository Manager OSS v2.12 from the link [here](http://www.sonatype.org/nexus/go/) and followed the installation instructions [here](http://books.sonatype.com/nexus-book/reference/installing.html) 
 
-Here is the view of ![nexus1]()images/nexus1.png
+Here is the view of ![nexus1](images/nexus1.png)
 
 
 
