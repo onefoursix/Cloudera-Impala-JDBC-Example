@@ -93,15 +93,33 @@ To build the project you must have Maven 2.x or higher installed.  Maven info is
 To run the project you must have access to a Hadoop cluster running Impala with at least one populated table defined in the Hive Metastore.
 
 
-#### Building the Cloudera Impala JDBC Example
+#### Configuring the Cloudera Impala JDBC Example
 
 Make sure to set your local repo in pom.xml as described above
 
-Edit the file src/main/resources/ClouderaImpalaJdbcExample.conf 
+Edit the file src/main/resources/ClouderaImpalaJdbcExample.conf and set your Impala host and port in teh connection.url (Impala's default port is 21050) and set the appropriate JDBC driver class.  I am using JDBC4.1 so my conf file looks like this:
+
+    # ClouderaImpalaJdbcExample.conf
+    connection.url = jdbc:impala://chicago.onefoursix.com:21050
+    jdbc.driver.class.name = com.cloudera.impala.jdbc41.Driver
+
+See the JDBC driver's docs for more details.
 
 
+#### Building the Cloudera Impala JDBC Example
 
+Build the project like this:
 
+    $ mvn clean package
+
+If this is the first time you are building the project you should see messages like this showing that Maven is retrieving the JDBC jars from the local repo:
+
+    Downloading: http://10.10.10.7:8081/nexus/content/repositories/thirdparty/com/cloudera/impala/jdbc/hive_metastore/2.5.30/hive_metastore-2.5.30.jar
+    Downloading: http://10.10.10.7:8081/nexus/content/repositories/thirdparty/com/cloudera/impala/jdbc/hive_service/2.5.30/hive_service-2.5.30.jar
+    Downloading: http://10.10.10.7:8081/nexus/content/repositories/thirdparty/com/cloudera/impala/jdbc/ImpalaJDBC41/2.5.30/ImpalaJDBC41-2.5.30.jar
+    Downloading: http://10.10.10.7:8081/nexus/content/repositories/thirdparty/com/cloudera/impala/jdbc/ql/2.5.30/ql-2.5.30.jar
+    Downloading: http://10.10.10.7:8081/nexus/content/repositories/thirdparty/com/cloudera/impala/jdbc/TCLIServiceClient/2.5.30/TCLIServiceClient-2.5.30.jar
+    Downloaded: http://10.10.10.7:8081/nexus/content/repositories/thirdparty/com/cloudera/impala/jdbc/ql/2.5.30/ql-2.5.30.jar (288 KB at 11995.3 KB/sec)
 
 Here are links to more information on Cloudera Impala:
 
