@@ -140,7 +140,47 @@ If your build is successful you should see messages like this:
 
 #### Running the Cloudera Impala JDBC Example
 
-Run the example using the 
+Run the example using the run.sh script which by default passes a SQL statement as an argument:
+
+    mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample -Dexec.arguments="SELECT description FROM sample_07 limit 10"
+
+Your output should look something like this"
+
+    $ ./run.sh
+    [INFO] Scanning for projects...
+    ...                                                                        
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Building cloudera-impala-jdbc-example 1.0
+    [INFO] ------------------------------------------------------------------------
+    [INFO] 
+    [INFO] >>> exec-maven-plugin:1.2.1:java (default-cli) > validate @ cloudera-impala-jdbc-example >>>
+    [INFO] 
+    [INFO] <<< exec-maven-plugin:1.2.1:java (default-cli) < validate @ cloudera-impala-jdbc-example <<<
+    [INFO] 
+    [INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ cloudera-impala-jdbc-example ---
+    
+    Cloudera Impala JDBC Example
+    Using Connection URL: null
+    Running Query: SELECT description FROM sample_07 limit 10
+
+    == Begin Query Results ======================
+    All Occupations
+    Management occupations
+    Chief executives
+    General and operations managers
+    Legislators
+    Advertising and promotions managers
+    Marketing managers
+    Sales managers
+    Public relations managers
+    Administrative services managers
+    == End Query Results =======================
+    
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+
+
 
 Here are links to more information on Cloudera Impala:
 
