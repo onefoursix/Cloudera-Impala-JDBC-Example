@@ -25,10 +25,7 @@ The JDBC driver's installation instructions say only that "...you must set the c
 While this works fine for one-off projects, it's a little loose for shops that would rather manage their dependencies using Maven or other build systems. 
 
 Part of the challenge in building a project using those jars with Maven is that some of the jars are not available in public repos and some of them do not have obvious version numbers.  My approach in this example will be to use a local Maven repo to manage the first five jars in the list above and to rely on publicly available Maven repos for jars 6 - 11 (as they have version numbers in their name). 
-
-I don't believe the first jar (ImpalaJDBC41.jar) is available in a public repo, although jars 2 through 5 might be.  However, jars 2 through 5 are not named with version numbers, so I decided to just manage all five in a private repo to avoid mistakenly getting an incorrect version of one of those jars from a public repo
-
-I will use the community version of the [Nexus Repository Manager OSS](http://www.sonatype.org/nexus/go/)) as a local Maven repo
+I will use the community version of the [Nexus Repository Manager OSS](http://www.sonatype.org/nexus/go/) as a local Maven repo
 
 I downloaded Nexus Repository Manager OSS v2.12 from the link [here](http://www.sonatype.org/nexus/go/) and followed the installation instructions [here](http://books.sonatype.com/nexus-book/reference/installing.html) 
 
