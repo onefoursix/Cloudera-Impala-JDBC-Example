@@ -2,7 +2,7 @@
 
 [Apache Impala (Incubating)](http://www.cloudera.com/products/apache-hadoop/impala.html) is an open source, analytic MPP database for Apache Hadoop.
 
-This example shows how to build and run a maven-based project to execute SQL queries on Impala using JDBC
+This example shows how to build and run a Maven-based project to execute SQL queries on Impala using JDBC
 
 I tested using Impala 2.3.x included with [CDH 5.5.x](http://www.cloudera.com/downloads/cdh/5-5-2.html) and the [Impala JDBC Driver v2.5.30](http://www.cloudera.com/downloads/connectors/impala/jdbc/2-5-30.html)
 
@@ -24,9 +24,9 @@ The JDBC driver's installation instructions say only that "...you must set the c
 
 While this works fine for one-off projects, it's a little loose for shops that would rather manage their dependencies using Maven or other build systems. 
 
-Part of the challenge in building a project using those jars with Maven is that some of the jars are not available in public repos and some of them do not have obvious version numbers.  My approach in this example will be to use a local Maven repo to manage the first five jars in the list above and to rely on publicly available Maven coordinates for jars 6 - 11 (as they have version numbers in their name). 
+Part of the challenge in building a project using those jars with Maven is that some of the jars are not available in public repos and some of them do not have obvious version numbers.  My approach in this example will be to use a local Maven repo to manage the first five jars in the list above and to rely on publicly available Maven repos for jars 6 - 11 (as they have version numbers in their name). 
 
-I don't believe the first jar(ImpalaJDBC41.jar) is available in a public repo, although jars 2 through 5 might be.  However, jars 2 through 5 are not named with version numbers, so I decided to just manage all five in a private repo.
+I don't believe the first jar (ImpalaJDBC41.jar) is available in a public repo, although jars 2 through 5 might be.  However, jars 2 through 5 are not named with version numbers, so I decided to just manage all five in a private repo to avoid mistakenly getting an incorrect version of one of those jars from a public repo
 
 I will use the community version of the [Nexus Repository Manager OSS](http://www.sonatype.org/nexus/go/)) as a local Maven repo
 
