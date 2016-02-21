@@ -52,8 +52,6 @@ public class ClouderaImpalaJdbcExample {
 		System.out.println("Using Connection URL: " + connectionUrl);
 		System.out.println("Running Query: " + sqlStatement);
 
-                loadConfiguration();
-
 		Connection con = null;
 
 		try {
