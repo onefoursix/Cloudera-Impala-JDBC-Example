@@ -4,7 +4,22 @@
 
 This example tested with Impala 2.3.x included with [CDH 5.5.x](http://www.cloudera.com/downloads/cdh/5-5-2.html) and uses the [Impala JDBC Driver v2.5.30](http://www.cloudera.com/downloads/connectors/impala/jdbc/2-5-30.html)
 
-The Impala JDBC Driver download is packaged as a zip file that includes these jars:
+When you download the Impala JDBC Driver from the link above, it is packaged as a zip file, with seperate distributions for JDBC3, JDBC4 and JDBC4.1 for a variety of OS's  This example uses the distribution for JDBC4.1 on RHEL6 x86_64.  The zip file contains the following jar files:
+
+	ImpalaJDBC41.jar
+	TCLIServiceClient.jar
+	hive_metastore.jar
+	hive_service.jar
+	ql.jar
+	libfb303-0.9.0.jar
+	libthrift-0.9.0.jar
+	log4j-1.2.14.jar
+	slf4j-api-1.5.11.jar
+	slf4j-log4j12-1.5.11.jar
+	zookeeper-3.4.6.jar
+
+
+	The installation instructions say to 
 
 
 
