@@ -33,6 +33,10 @@ Here is the view of my local Nexus repo available after launching it for the fir
 
 ![nexus2](images/nexus2.png)
 
+To add jars to the repo, login to Nexus, go to the 3rd party repo's "upload artifacts" tab and select the desired jar to upload.  I specified a group of "com.cloudera.impala.jdbc" and a version number of "2.5.30" for each of the five jars I uploaded, like this:
+
+![nexus3](images/nexus3.png)
+
 
 
 
