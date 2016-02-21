@@ -1,20 +1,19 @@
 ###Cloudera Impala JDBC Example
 
-This branch is for Cloudera Impala included with CDH 5.5.2 and uses the [Impala JDBC Driver v2.5.30](http://www.cloudera.com/downloads/connectors/impala/jdbc/2-5-30.html)
+[Impala](http://www.cloudera.com/products/apache-hadoop/impala.html) (currently an Apache Incubator project) is an open source, analytic MPP database for Apache Hadoop 
 
-This example shows how to build and run a maven-based project that executes SQL queries on Cloudera Impala using JDBC. 
-Cloudera Impala is a native Massive Parallel Processing (MPP) query engine which enables users to perform interactive analysis of data stored in HBase or HDFS. 
+This example tested with Impala 2.3.x included with [CDH 5.5.x](http://www.cloudera.com/downloads/cdh/5-5-2.html) and uses the [Impala JDBC Driver v2.5.30](http://www.cloudera.com/downloads/connectors/impala/jdbc/2-5-30.html)
+
+The Impala JDBC Driver download is packaged as a zip file that includes these jars:
+
+
+
+This example shows how to build and run a maven-based project to execute SQL queries on Impala using JDBC. 
+ 
+ 
 
 Here are links to more information on Cloudera Impala:
 
-
-- [Cloudera Impala Documentation](http://www.cloudera.com/content/cloudera-content/cloudera-docs/CDH5/latest/Impala/impala.html)
-
-- [Cloudera Impala JDBC Documentation](http://www.cloudera.com/content/cloudera-content/cloudera-docs/CDH5/latest/Impala/Installing-and-Using-Impala/ciiu_impala_jdbc.html)
-
-- [Impala-User Google Group](https://groups.google.com/a/cloudera.org/forum/?fromgroups#!forum/impala-user)
-
- 
  
 To use the Cloudera Impala JDBC driver in your own maven-based project you can copy the \<dependency\> and \<repository\> elements from this project's pom to your own (or use this [gist](https://gist.github.com/onefoursix/950e292bf295f0492422) ) instead of manually downloading the JDBC driver jars.
 
