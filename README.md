@@ -37,7 +37,7 @@ To add jars to the repo, login to Nexus, go to the 3rd party repo's "upload arti
 
 ![nexus3](images/nexus3.png)
 
-Click on the 3rd party repo's URL link on the right (in my case "http://10.10.10.7:8081/nexus/content/repositories/thirdparty/") and you can browse the uploaded jars:
+Click on the 3rd party repo's URL link and you can browse the uploaded jars:
 
 ![nexus4](images/nexus4.png)
 
