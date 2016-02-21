@@ -12,8 +12,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<impala.jdbc.version>2.5.30</impala.jdbc.version>
-        <uber.jar.name>cloudera-impala-jdbc-example-uber.jar</uber.jar.name>
-        <uber.jar.main.class>com.cloudera.example.ClouderaImpalaJdbcExample</uber.jar.main.class>
+        	<uber.jar.name>cloudera-impala-jdbc-example-uber.jar</uber.jar.name>
+        	<uber.jar.main.class>com.cloudera.example.ClouderaImpalaJdbcExample</uber.jar.main.class>
 	</properties>
 	
 	<dependencies>
