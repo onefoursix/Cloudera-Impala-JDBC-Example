@@ -93,7 +93,7 @@ To build the project you must have Maven 2.x or higher installed.  Maven info is
 To run the project you must have access to a Hadoop cluster running Impala with at least one populated table defined in the Hive Metastore.
 
 
-#### Configuring the Cloudera Impala JDBC Example
+#### Configuring the example
 
 Make sure to set your local repo in pom.xml as described above
 
@@ -106,7 +106,7 @@ Edit the file src/main/resources/ClouderaImpalaJdbcExample.conf and set an Impal
 See the JDBC driver's docs for more details.
 
 
-#### Building the Cloudera Impala JDBC Example
+#### Building the example
 
 Build the project like this:
 
@@ -149,7 +149,7 @@ The uber jar will be located at target/cloudera-impala-jdbc-example-uber.jar
 
 #### Running the example using the uber jar
 
-One can run the example using the uber jar with a "java -jar" command with the SQL statement as an argument like this:
+One can run the example using the uber jar with a "java -jar" command with a SQL statement as an argument like this:
 
     $ java -jar target/cloudera-impala-jdbc-example-uber.jar "SELECT description FROM sample_07 limit 10"
 
@@ -170,6 +170,8 @@ One can run the example using the uber jar with a "java -jar" command with the S
     Public relations managers
     Administrative services managers
     == End Query Results =======================
+
+There is a "run.sh" script provided with that command
 
 #### Running the example using Maven
 
