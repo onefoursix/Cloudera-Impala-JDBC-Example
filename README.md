@@ -119,7 +119,28 @@ If this is the first time you are building the project you should see messages l
     Downloading: http://10.10.10.7:8081/nexus/content/repositories/thirdparty/com/cloudera/impala/jdbc/ImpalaJDBC41/2.5.30/ImpalaJDBC41-2.5.30.jar
     Downloading: http://10.10.10.7:8081/nexus/content/repositories/thirdparty/com/cloudera/impala/jdbc/ql/2.5.30/ql-2.5.30.jar
     Downloading: http://10.10.10.7:8081/nexus/content/repositories/thirdparty/com/cloudera/impala/jdbc/TCLIServiceClient/2.5.30/TCLIServiceClient-2.5.30.jar
-    Downloaded: http://10.10.10.7:8081/nexus/content/repositories/thirdparty/com/cloudera/impala/jdbc/ql/2.5.30/ql-2.5.30.jar (288 KB at 11995.3 KB/sec)
+
+Whereas teh other jars (and their dependencies) are downloaded from the public repos:
+
+    Downloading: https://repository.cloudera.com/artifactory/cloudera-repos/org/apache/thrift/libfb303/0.9.0/libfb303-0.9.0.jar
+    Downloading: https://repository.cloudera.com/artifactory/cloudera-repos/org/apache/thrift/libthrift/0.9.0/libthrift-0.9.0.jar
+    ...
+
+If your build is successful you should see messages like this:
+
+    [INFO] Building jar: /home/mark/Cloudera-Impala-JDBC-Example-impala-cdh-5.5.2/cloudera-impala-jdbc-example-1.0.jar
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time: 39.232 s
+    [INFO] Finished at: 2016-02-20T21:36:10-08:00
+    [INFO] Final Memory: 17M/476M
+    [INFO] ------------------------------------------------------------------------
+
+
+#### Running the Cloudera Impala JDBC Example
+
+Run the example using the 
 
 Here are links to more information on Cloudera Impala:
 
