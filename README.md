@@ -20,7 +20,7 @@ When you download the Impala JDBC Driver from the link above, it is packaged as 
 	slf4j-log4j12-1.5.11.jar
 	zookeeper-3.4.6.jar
 
-The JDBC driver's installation instructions say only that "..you must set the class path to include all the JAR files from the ZIP archive containing the driver that you are using"
+The JDBC driver's installation instructions say only that "...you must set the class path to include all the JAR files from the ZIP archive containing the driver that you are using..."
 
 While this works fine for one-off projects, it is a little loose for shops that would rather manage their dependencies using Maven or other build systems. 
 
