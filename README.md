@@ -29,7 +29,7 @@ I will use the community version of the [Nexus Repository Manager OSS](http://ww
 
 I downloaded Nexus Repository Manager OSS v2.12 from the link [here](http://www.sonatype.org/nexus/go/) and followed the installation instructions [here](http://books.sonatype.com/nexus-book/reference/installing.html) 
 
-Here is the view of my local Nexus repo available after launching it for the first time.  Note there is already a repo named "3rd Party" which I will use to manage the first five JDBC driver jars:  
+Here is the view of my local Nexus repo available after launching it for the first time.  Note there is already a repo named "3rd party" which I will use to manage the first five JDBC driver jars:  
 
 ![nexus2](images/nexus2.png)
 
