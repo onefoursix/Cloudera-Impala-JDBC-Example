@@ -56,7 +56,7 @@ Now that we have a local repo available hosting the JDBC jars, all we need to do
       </snapshots>
     </repository>
 
-For example, in my case the entry looks like this:
+For example, in my case my local repo entry looks like this:
 
     <repository>
       <id>nexus.local</id>
@@ -75,7 +75,7 @@ And you can refer to the JDBC artifacts with entries like this:
       <version>2.5.30</version>
     </dependency>
 
-Jars 6 - 11 will be retrieved from the Cloudera and Maven central repos and will have traditional dependency elements like this:
+Jars 6 - 11 will be retrieved from the Cloudera and Maven Central repos and will have traditional dependency elements like this:
 
     <dependency>
       <groupId>org.apache.thrift</groupId>
