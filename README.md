@@ -1,6 +1,6 @@
 ###Cloudera Impala JDBC Example
 
-This branch is for Cloudera Impala included with CDH 5.2.1
+This branch is for Cloudera Impala included with CDH 5.5.2 and uses the [Impala JDBC Driver v2.5.30](http://www.cloudera.com/downloads/connectors/impala/jdbc/2-5-30.html)
 
 This example shows how to build and run a maven-based project that executes SQL queries on Cloudera Impala using JDBC. 
 Cloudera Impala is a native Massive Parallel Processing (MPP) query engine which enables users to perform interactive analysis of data stored in HBase or HDFS. 
