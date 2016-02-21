@@ -6,7 +6,7 @@ This example shows how to build and run a maven-based project to execute SQL que
 
 I tested using Impala 2.3.x included with [CDH 5.5.x](http://www.cloudera.com/downloads/cdh/5-5-2.html) and the [Impala JDBC Driver v2.5.30](http://www.cloudera.com/downloads/connectors/impala/jdbc/2-5-30.html)
 
-When you download the Impala JDBC Driver from the link above it is packaged as a zip file with seperate distributions for JDBC3, JDBC4 and JDBC4.1, and for a variety of OS's.  This example uses the distribution for JDBC4.1 on RHEL6 x86_64.  The downladed zip file contains the following eleven jar files:
+When you download the Impala JDBC Driver from the link above, it is packaged as a zip file with seperate distributions for JDBC3, JDBC4 and JDBC4.1.  This example uses the distribution for JDBC4.1 on RHEL6 x86_64.  The downloaded zip file contains the following eleven jar files:
 
 	ImpalaJDBC41.jar
 	TCLIServiceClient.jar
@@ -20,11 +20,11 @@ When you download the Impala JDBC Driver from the link above it is packaged as a
 	slf4j-log4j12-1.5.11.jar
 	zookeeper-3.4.6.jar
 
-The JDBC driver's installation instructions say "you must set the class path to include all the JAR files from the ZIP archive containing the driver that you are using"
+The JDBC driver's installation instructions say only that "..you must set the class path to include all the JAR files from the ZIP archive containing the driver that you are using"
 
-While this works fine, it can be a little loose for shops that would rather manage their dependencies in a Maven repository. 
+While this works fine for one-off projects, it is a little loose for shops that would rather manage their dependencies using Maven or other build systems. 
 
-Part of the challenge in building a project using those jars with Maven is that not all of the jars are available in public repos, and some of them do not have obvious version numbers.  My approach in this example is to configure a local Maven repo (I will use community version of the [Nexus Repository Manager OSS](http://www.sonatype.org/nexus/go/)
+Part of the challenge in building a project using those jars with Maven is that some of them are not available in public repos and some of them do not have obvious version numbers.  My approach in this example is to configure a local Maven repo (I will use the community version of the [Nexus Repository Manager OSS](http://www.sonatype.org/nexus/go/))
 
 
  
