@@ -128,25 +128,58 @@ Whereas the other jars (and their dependencies) are downloaded from the public r
 
 If your build is successful you should see messages like this:
 
-    [INFO] Building jar: /home/mark/Cloudera-Impala-JDBC-Example-impala-cdh-5.5.2/cloudera-impala-jdbc-example-1.0.jar
+    [INFO] Building jar: /home/mark/a/Cloudera-Impala-JDBC-Example-impala-cdh-5.5.2/cloudera-impala-jdbc-example-1.0.jar
+    [INFO] 
+    [INFO] --- maven-shade-plugin:2.2:shade (default) @ cloudera-impala-jdbc-example ---
+    [INFO] Including com.cloudera.impala.jdbc:hive_metastore:jar:2.5.30 in the shaded jar.
+    [INFO] Including com.cloudera.impala.jdbc:hive_service:jar:2.5.30 in the shaded jar.
+    ...
     [INFO] ------------------------------------------------------------------------
     [INFO] BUILD SUCCESS
     [INFO] ------------------------------------------------------------------------
-    [INFO] Total time: 39.232 s
-    [INFO] Finished at: 2016-02-20T21:36:10-08:00
-    [INFO] Final Memory: 17M/476M
+    [INFO] Total time: 3.108 s
+    [INFO] Finished at: 2016-02-21T11:24:56-08:00
+    [INFO] Final Memory: 32M/476M
     [INFO] ------------------------------------------------------------------------
 
+Note that pom.xml is configured to have Maven build an "uber jar" will all dependencies packaged in a single jar and with the main class set
 
-#### Running the Cloudera Impala JDBC Example
+The uber jar will be located at target/cloudera-impala-jdbc-example-uber.jar
 
-Run the example using the run.sh script which by default passes a SQL statement as an argument:
+
+#### Running the example using the uber jar
+
+One can run the example using the uber jar with a "java -jar" command with the SQL statement as an argument like this:
+
+    $ java -jar target/cloudera-impala-jdbc-example-uber.jar "SELECT description FROM sample_07 limit 10"
+
+    =============================================
+    Cloudera Impala JDBC Example
+    Using Connection URL: jdbc:impala://chicago.onefoursix.com:21050
+    Running Query: SELECT description FROM sample_07 limit 10
+
+    == Begin Query Results ======================
+    All Occupations
+    Management occupations
+    Chief executives
+    General and operations managers
+    Legislators
+    Advertising and promotions managers
+    Marketing managers
+    Sales managers
+    Public relations managers
+    Administrative services managers
+    == End Query Results =======================
+
+#### Running the example using Maven
+
+One can also run the example using Maven using the run-with-maven.sh script which by default passes a SQL statement as an argument:
 
     mvn exec:java -Dexec.mainClass=com.cloudera.example.ClouderaImpalaJdbcExample -Dexec.arguments="SELECT description FROM sample_07 limit 10"
 
-Your output should look something like this:
+Your output should look like this:
 
-    $ ./run.sh
+    $ ./run-with-maven.sh
     [INFO] Scanning for projects...
     ...                                                                        
     [INFO] ------------------------------------------------------------------------
