@@ -1,6 +1,6 @@
 ###Cloudera Impala JDBC Example
 
-[Impala](http://www.cloudera.com/products/apache-hadoop/impala.html) (an Apache Incubator project) is an open source, analytic MPP database for Apache Hadoop.
+[Apache Impala](http://www.cloudera.com/products/apache-hadoop/impala.html) (an Apache Incubator project) is an open source, analytic MPP database for Apache Hadoop.
 
 This example shows how to build and run a maven-based project to execute SQL queries on Impala using JDBC
 
