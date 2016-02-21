@@ -45,7 +45,52 @@ Drill into any of the managed artifacts and you can see the version number has b
 
 ![nexus5](images/nexus5.png)
  
- 
+Now that we have a local repo available hosting the JDBC jars, all we need to do is add that repo to our pom with an entry like this:
+
+    <repository>
+      <id>YOUR.LOCAL.REPO.ID</id>
+      <url><YOUR LOCAL REPO URL></url>
+      <name>YOUR.LOCAL.REPO.NAME</name>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+
+For example, in my case the entry looks like this:
+
+    <repository>
+      <id>nexus.local</id>
+      <url>http://10.10.10.7:8081/nexus/content/repositories/thirdparty</url>
+      <name>Nexus Local</name>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+
+And you can refer to the JDBC artifacts with entries like this:
+
+    <dependency>
+      <groupId>com.cloudera.impala.jdbc</groupId>
+      <artifactId>ImpalaJDBC41</artifactId>
+      <version>2.5.30</version>
+    </dependency>
+
+Jars 6 - 11 will be retrieved from the Cloudera and Maven central repos and will have traditional dependency elements like this:
+
+    <dependency>
+      <groupId>org.apache.thrift</groupId>
+      <artifactId>libfb303</artifactId>
+      <version>0.9.0</version>
+    </dependency>
+
+See the pom.xml for details
+
+
+#### Building the Cloudera Impala JDBC Example
+
+
+
+
 
 Here are links to more information on Cloudera Impala:
 
