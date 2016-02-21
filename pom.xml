@@ -7,27 +7,76 @@
 	<artifactId>cloudera-impala-jdbc-example</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
-	<description>Cloudera Impala JDBC Example for CDH 5.1.0</description>
+	<description>Cloudera Impala JDBC Example for CDH 5.5.2</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-                <cdh.hive.version>0.13.1-cdh5.2.1</cdh.hive.version>
-                <cdh.hadoop.version>2.5.0-cdh5.2.1</cdh.hadoop.version>
+		<impala.jdbc.version>2.5.30</impala.jdbc.version>
 	</properties>
 	
 	<dependencies>
+		
+	<!-- These dependencies provided by your local repo -->
+	
 		<dependency>
-			<groupId>org.apache.hive</groupId>
-			<artifactId>hive-jdbc</artifactId>
-			<version>${cdh.hive.version}</version>
+			<groupId>com.cloudera.impala.jdbc</groupId>
+			<artifactId>hive_metastore</artifactId>
+			<version>${impala.jdbc.version}</version>
 		</dependency>
-
 		<dependency>
-  			<groupId>org.apache.hadoop</groupId>
-  			<artifactId>hadoop-common</artifactId>
-  			<version>${cdh.hadoop.version}</version>
+			<groupId>com.cloudera.impala.jdbc</groupId>
+			<artifactId>hive_service</artifactId>
+			<version>${impala.jdbc.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.cloudera.impala.jdbc</groupId>
+			<artifactId>ImpalaJDBC41</artifactId>
+			<version>${impala.jdbc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cloudera.impala.jdbc</groupId>
+			<artifactId>ql</artifactId>
+			<version>${impala.jdbc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cloudera.impala.jdbc</groupId>
+			<artifactId>TCLIServiceClient</artifactId>
+			<version>${impala.jdbc.version}</version>
+		</dependency>
+		
+	<!-- End of dependencies provided by your local repo -->	
+		
+		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libfb303</artifactId>
+			<version>0.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+			<version>0.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.5.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.5.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.4.6</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -61,24 +110,34 @@
 				</configuration>
 			</plugin>
 			<plugin>
-                                <artifactId>maven-clean-plugin</artifactId>
-                                <version>2.6.1</version>
-                                <configuration>
-                                        <filesets>
-                                                <fileset>
-                                                        <directory>.</directory>
-                                                        <includes>
-                                                                <include>*.jar</include>
-                                                        </includes>
-                                                        <followSymlinks>false</followSymlinks>
-                                                </fileset>
-                                        </filesets>
-                                </configuration>
-                        </plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.6.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>.</directory>
+							<includes>
+								<include>*.jar</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
 	<repositories>
+	
+	    <repository>
+			<id>YOUR.LOCAL.REPO.ID</id>
+			<url><YOUR LOCAL REPO URL></url>
+			<name>YOUR.LOCAL.REPO.NAME</name>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		
 		<repository>
 			<id>cdh.repo</id>
 			<url>https://repository.cloudera.com/artifactory/cloudera-repos</url>
@@ -87,17 +146,7 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-		<repository>
-			<id>cdh.snapshots.repo</id>
-			<url>https://repository.cloudera.com/artifactory/libs-snapshot-local</url>
-			<name>Cloudera Snapshots Repository</name>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-		</repository>
+		
 		<repository>
 			<id>central</id>
 			<url>http://repo1.maven.org/maven2/</url>
@@ -108,6 +157,7 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+		
 	</repositories>
 
 </project>
