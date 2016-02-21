@@ -12,6 +12,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<impala.jdbc.version>2.5.30</impala.jdbc.version>
+        <uber.jar.name>cloudera-impala-jdbc-example-uber.jar</uber.jar.name>
+        <uber.jar.main.class>com.cloudera.example.ClouderaImpalaJdbcExample</uber.jar.main.class>
 	</properties>
 	
 	<dependencies>
@@ -124,12 +126,58 @@
 					</filesets>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<shadedArtifactAttached>false</shadedArtifactAttached>
+					<outputFile>target/${uber.jar.name}</outputFile>
+					<artifactSet>
+						<includes>
+							<include>*:*</include>
+						</includes>
+					</artifactSet>
+					<filters>
+						<filter>
+							<artifact>*:*</artifact>
+							<excludes>
+								<exclude>META-INF/*.SF</exclude>
+								<exclude>META-INF/*.DSA</exclude>
+								<exclude>META-INF/*.RSA</exclude>
+							</excludes>
+						</filter>
+					</filters>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+								<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+									<resource>reference.conf</resource>
+								</transformer>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  					<mainClass>${uber.jar.main.class}</mainClass>
+                				</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
 	<repositories>
-	
-	    <repository>
+
+
+		<!-- YOUR LOCAL REPO -->
+		<repository>
 			<id>YOUR.LOCAL.REPO.ID</id>
 			<url><YOUR LOCAL REPO URL></url>
 			<name>YOUR.LOCAL.REPO.NAME</name>
@@ -137,7 +185,7 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-		
+
 		<repository>
 			<id>cdh.repo</id>
 			<url>https://repository.cloudera.com/artifactory/cloudera-repos</url>
