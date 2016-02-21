@@ -97,7 +97,7 @@ To run the project you must have access to a Hadoop cluster running Impala with 
 
 Make sure to set your local repo in pom.xml as described above
 
-Edit the file src/main/resources/ClouderaImpalaJdbcExample.conf and set your Impala host and port in teh connection.url (Impala's default port is 21050) and set the appropriate JDBC driver class.  I am using JDBC4.1 so my conf file looks like this:
+Edit the file src/main/resources/ClouderaImpalaJdbcExample.conf and set your Impala host and port in the connection.url (Impala's default port is 21050) and set the appropriate JDBC driver class.  I am using JDBC4.1 so my conf file looks like this:
 
     # ClouderaImpalaJdbcExample.conf
     connection.url = jdbc:impala://chicago.onefoursix.com:21050
