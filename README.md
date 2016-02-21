@@ -86,7 +86,18 @@ Jars 6 - 11 will be retrieved from the Cloudera and Maven central repos and will
 See the pom.xml for details
 
 
+
+####Dependencies
+To build the project you must have Maven 2.x or higher installed.  Maven info is [here](http://maven.apache.org).
+
+To run the project you must have access to a Hadoop cluster running Impala with at least one populated table defined in the Hive Metastore.
+
+
 #### Building the Cloudera Impala JDBC Example
+
+Make sure to set your local repo in pom.xml as described above
+
+Edit the file src/main/resources/ClouderaImpalaJdbcExample.conf 
 
 
 
@@ -98,12 +109,6 @@ Here are links to more information on Cloudera Impala:
 To use the Cloudera Impala JDBC driver in your own maven-based project you can copy the \<dependency\> and \<repository\> elements from this project's pom to your own (or use this [gist](https://gist.github.com/onefoursix/950e292bf295f0492422) ) instead of manually downloading the JDBC driver jars.
 
 
-
-
-####Dependencies
-To build the project you must have Maven 2.x or higher installed.  Maven info is [here](http://maven.apache.org).
-
-To run the project you must have access to a Hadoop cluster running Cloudera Impala with at least one populated table defined in the Hive Metastore.
 
 
 ####Configure the example
