@@ -8,23 +8,24 @@ I tested using Impala 2.3.x included with [CDH 5.5.x](http://www.cloudera.com/do
 
 When you download the Impala JDBC Driver from the link above, it is packaged as a zip file with separate distributions for JDBC3, JDBC4 and JDBC4.1.  This example uses the distribution for JDBC4.1 on RHEL6 x86_64.  The downloaded zip file contains the following eleven jar files:
 
-	ImpalaJDBC41.jar
-	TCLIServiceClient.jar
-	hive_metastore.jar
-	hive_service.jar
-	ql.jar
-	libfb303-0.9.0.jar
-	libthrift-0.9.0.jar
-	log4j-1.2.14.jar
-	slf4j-api-1.5.11.jar
-	slf4j-log4j12-1.5.11.jar
-	zookeeper-3.4.6.jar
+	(1)  ImpalaJDBC41.jar
+	(2)  TCLIServiceClient.jar
+	(3)  hive_metastore.jar
+	(4)  hive_service.jar
+	(5)  ql.jar
+	(6)  libfb303-0.9.0.jar
+	(7)  libthrift-0.9.0.jar
+	(8)  log4j-1.2.14.jar
+	(9)  slf4j-api-1.5.11.jar
+	(10) slf4j-log4j12-1.5.11.jar
+	(11) zookeeper-3.4.6.jar
 
 The JDBC driver's installation instructions say only that "...you must set the class path to include all the JAR files from the ZIP archive containing the driver that you are using..."
 
 While this works fine for one-off projects, it is a little loose for shops that would rather manage their dependencies using Maven or other build systems. 
 
-Part of the challenge in building a project using those jars with Maven is that some of them are not available in public repos and some of them do not have obvious version numbers.  My approach in this example is to configure a local Maven repo (I will use the community version of the [Nexus Repository Manager OSS](http://www.sonatype.org/nexus/go/))
+Part of the challenge in building a project using those jars with Maven is that some of them are not available in public repos and some of them do not have obvious version numbers.  My approach in this example is to configure a local Maven repo (I will use the community version of the [Nexus Repository Manager OSS](http://www.sonatype.org/nexus/go/)) to manage the first five jars in the list above, and will refer to publicly available Maven coordinates for the remaining six jars. Of the first five jars, I don't believe the ImpalaJDBC41.jar is available in a public repo, although the others might be.  However, the others are not named with version numbers I decided to just manage all five in a private repo.
+
 
 
  
