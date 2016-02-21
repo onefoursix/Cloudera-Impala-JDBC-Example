@@ -44,6 +44,8 @@ public class ClouderaImpalaJdbcExample {
                         System.exit(1);
                 }
                 String sqlStatement = args[0];
+                
+                loadConfiguration();
 
 		System.out.println("\n=============================================");
 		System.out.println("Cloudera Impala JDBC Example");
