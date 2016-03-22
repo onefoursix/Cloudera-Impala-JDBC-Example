@@ -112,7 +112,7 @@ Build the project like this:
 
     $ mvn clean package
 
-If this is the first time you are building the project you should see messages like this showing that Maven is retrieving the JDBC jars from the local repo:
+If this is the first time you are building the project you should see messages like this showing that Maven is retrieving the JDBC jars from your local repo:
 
     Downloading: http://10.10.10.7:8081/nexus/content/repositories/thirdparty/com/cloudera/impala/jdbc/hive_metastore/2.5.30/hive_metastore-2.5.30.jar
     Downloading: http://10.10.10.7:8081/nexus/content/repositories/thirdparty/com/cloudera/impala/jdbc/hive_service/2.5.30/hive_service-2.5.30.jar
